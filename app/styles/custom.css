@@ -93,6 +93,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 800;
 }
 
+.artists-list {
+    line-height: 2.0em;
+}
+
+#album-art-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
 .jumbotron {
     background-color: transparent;
 }

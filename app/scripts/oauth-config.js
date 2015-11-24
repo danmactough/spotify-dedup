@@ -3,12 +3,12 @@
 var OAuthConfig = (function() {
   'use strict';
 
-  var clientId = '04dca0de1c4e4aca88cc615ac23581be';
+  var clientId = 'fb182abd36104636b1e0b733e1e9cd3c';
   var redirectUri;
   if (location.host === 'localhost:8005') {
     redirectUri = 'http://localhost:8005/callback.html';
   } else {
-    redirectUri = 'https://jmperezperez.com/spotify-dedup/callback.html';
+    redirectUri = 'https://mact.me/spotify-album-merge/callback.html';
   }
   var host = /http[s]?:\/\/[^/]+/.exec(redirectUri)[0];
   return {
