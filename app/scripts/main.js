@@ -1,4 +1,4 @@
-/*global items, ko, PromiseThrottle, SpotifyWebApi, OAuthManager, Promise */
+/*global ko, PromiseThrottle, SpotifyWebApi, OAuthManager, Promise */
 
 (function() {
   'use strict';
@@ -103,9 +103,6 @@
   });
 
   function fetchUserTracks() {
-    return new Promise(function (resolve) {
-      resolve(items);
-    });
     return promisesForPages(promiseThrottle.add(function() {
         // fetch user's saved tracks, 50 at a time
           return api.getMySavedTracks({limit: 50});
