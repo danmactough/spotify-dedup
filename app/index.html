@@ -75,6 +75,9 @@
                         <!-- ko if: toProcess() == 0 -->
                         Your library has been processed!<br/>Scroll down to see all your artists' albums.
                         <!-- /ko -->
+                        <div class "zero-toggle-container">
+                            <label for="zero-toggle">Show albums with 0 tracks? <input id="zero-toggle" type="checkbox" data-bind="checked: showZeros" /></label>
+                        </div>
                       </div>
                     </div>
                     <ul class="artists-list" data-bind="foreach: artists().sort(function (a, b) { if (a.name > b.name) { return 1; } else if (a.name < b.name) { return -1; } else { return 0; } })">
@@ -86,7 +89,7 @@
                             <!-- ko if: albums().length -->
                             <span> - Albums for this artist </span>
                             <ul class="albums" data-bind="foreach: albums().sort(function (a, b) { if (a.nameNormalized() > b.nameNormalized()) { return 1; } else if (a.nameNormalized() < b.nameNormalized()) { return -1; } else { return 0; } })">
-                                <li>
+                                <li data-bind="visible: tracks().length > 0 || $root.showZeros">
                                     <strong><span data-bind="text: name, attr: { title: nameNormalized }, event: { mouseover: onMouseover, mouseout: onMouseout }">
                                     </span></strong>
                                     <!-- ko if: isCanonical() -->

@@ -82,6 +82,7 @@
     this.toProcess = ko.observable(1);
     this.startedProcessing = ko.observable(false);
     this.selectedUrl = ko.observable("");
+    this.showZeros = ko.observable(true);
   }
 
   var promiseThrottle = new PromiseThrottle({requestsPerSecond: 10});
